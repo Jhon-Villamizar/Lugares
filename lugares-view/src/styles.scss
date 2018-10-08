@@ -61,10 +61,11 @@ footer.page-footer {
 }
 
 .parallax-container {
+  background: #000000b0;
   .parallax {
     img {
       opacity: 0.8 !important;
-      bottom: -129px;
+      // bottom: -129px;
     }
   }
 }
