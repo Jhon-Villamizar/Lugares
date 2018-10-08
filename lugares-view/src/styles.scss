@@ -29,6 +29,8 @@ p {
 
 .parallax-container .section {
   width: 100%;
+  padding-top: 70px;
+  padding-bottom: 50px;
 }
 
 @media only screen and (max-width : 992px) {
@@ -62,10 +64,11 @@ footer.page-footer {
 
 .parallax-container {
   background: #000000b0;
+  min-height: 500px;
   .parallax {
     img {
       opacity: 0.8 !important;
-      // bottom: -129px;
+      bottom: -129px;
     }
   }
 }
