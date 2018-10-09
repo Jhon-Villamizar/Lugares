@@ -11,5 +11,12 @@ export class TipoComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  tipos=true;
+  cambio(tipos){
+    if(tipos==true){
+      tipos = false;
+    } else {
+      tipos = true;
+    }
+  }
 }
