@@ -1,10 +1,10 @@
-<div class="container" *ngIf="tipos">
+<div class="container" id="clasificacion" *ngIf="tipos">
   <div class="section">
-    <!--   Icon Section   -->
+    <!--   Tipos!   -->
     <div class="row">
       <h3 class="center-align">Clasificación</h3>
       <div class="col s12 m4">
-        <a (click)="cambio(tipos)">
+        <a href="javascript:;" (click)="cambio($event)">
           <div class="card z-depth-3">
             <div class="card-content">
               <div class="icon-block">
@@ -46,3 +46,56 @@
       </div>
   </div>
 </div>
+
+
+<!-- Especialidades -->
+<div class="container" id="clasificacion" *ngIf="especialidadR">
+  <div class="section">
+    <div class="row">
+      <h3 class="center-align">Clasificación</h3>
+      <div class="col s12 m4">
+        <a href="javascript:;" (click)="cambio($event)">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/restaurates.jpg" class="responsive-img" alt="">
+                <h5 class="center">Restaurantes</h5>
+                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                  especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col s12 m4">
+        <a href="javascript:;" (click)="cambio($event)">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/restaurates.jpg" class="responsive-img" alt="">
+                <h5 class="center">Restaurantes</h5>
+                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                  especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col s12 m4">
+        <a href="javascript:;" (click)="cambio($event)">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/restaurates.jpg" class="responsive-img" alt="">
+                <h5 class="center">Restaurantes</h5>
+                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                  especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
