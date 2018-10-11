@@ -1,10 +1,11 @@
-<div class="container" id="clasificacion" *ngIf="tipos">
+<div class="container" id="clasificacion">
   <div class="section">
-    <!--   Tipos!   -->
-    <div class="row">
-      <h3 class="center-align">Clasificación</h3>
+    <h3 class="center-align">{{title}}</h3>
+
+    <!--   tipos!   -->
+    <div class="row" *ngIf="tipos">
       <div class="col s12 m4">
-        <a href="javascript:;" (click)="cambio($event)">
+        <a href="javascript:;" (click)="restaurantes($mostrarR)">
           <div class="card z-depth-3">
             <div class="card-content">
               <div class="icon-block">
@@ -18,7 +19,7 @@
       </div>
 
       <div class="col s12 m4">
-        <a href="javascript:;">
+        <a href="javascript:;" (click)="bares($mostrarB)">
           <div class="card z-depth-3">
             <div class="card-content">
               <div class="icon-block">
@@ -32,7 +33,7 @@
       </div>
 
       <div class="col s12 m4">
-        <a href="javascript:;">
+        <a href="javascript:;" (click)="cafes($mostrarC)">
           <div class="card z-depth-3">
             <div class="card-content">
               <div class="icon-block">
@@ -44,22 +45,17 @@
           </div>
         </a>
       </div>
-  </div>
-</div>
+    </div>
 
-
-<!-- Especialidades -->
-<div class="container" id="clasificacion" *ngIf="especialidadR">
-  <div class="section">
-    <div class="row">
-      <h3 class="center-align">Clasificación</h3>
+    <!--   especialidadR!   -->
+    <div class="row" *ngIf="especialidadR">
       <div class="col s12 m4">
-        <a href="javascript:;" (click)="cambio($event)">
+        <a href="javascript:;" (click)="eleccion1($especialidad)">
           <div class="card z-depth-3">
             <div class="card-content">
               <div class="icon-block">
                 <img src="../../../assets/restaurates.jpg" class="responsive-img" alt="">
-                <h5 class="center">Restaurantes</h5>
+                <h5 class="center">Parrilla</h5>
                 <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
                   especialidades.</p>
               </div>
@@ -67,14 +63,14 @@
           </div>
         </a>
       </div>
-
+    
       <div class="col s12 m4">
-        <a href="javascript:;" (click)="cambio($event)">
+        <a href="javascript:;" (click)="eleccion2($especialidad)">
           <div class="card z-depth-3">
             <div class="card-content">
               <div class="icon-block">
                 <img src="../../../assets/restaurates.jpg" class="responsive-img" alt="">
-                <h5 class="center">Restaurantes</h5>
+                <h5 class="center">Oriental</h5>
                 <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
                   especialidades.</p>
               </div>
@@ -82,14 +78,14 @@
           </div>
         </a>
       </div>
-
+    
       <div class="col s12 m4">
-        <a href="javascript:;" (click)="cambio($event)">
+        <a href="javascript:;" (click)="eleccion3($especialidad)">
           <div class="card z-depth-3">
             <div class="card-content">
               <div class="icon-block">
                 <img src="../../../assets/restaurates.jpg" class="responsive-img" alt="">
-                <h5 class="center">Restaurantes</h5>
+                <h5 class="center">Italiana</h5>
                 <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
                   especialidades.</p>
               </div>
@@ -98,4 +94,244 @@
         </a>
       </div>
     </div>
+
+        <!--   especialidadB!   -->
+    <div class="row" *ngIf="especialidadB">
+      <div class="col s12 m4">
+        <a href="javascript:;" (click)="eleccion($especialidadB)">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/bares2.jpg" class="responsive-img" alt="">
+                <h5 class="center">Cervezas</h5>
+
+                <p class="light">Encuentra todos las opciones en bares de toda la ciudad y sus respectivas especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="col s12 m4">
+        <a href="javascript:;" (click)="eleccion($especialidadB)">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/bares2.jpg" class="responsive-img" alt="">
+                <h5 class="center">Cocteles</h5>
+                <p class="light">Encuentra todos las opciones en bares de toda la ciudad y sus respectivas especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="col s12 m4">
+        <a href="javascript:;" (click)="eleccion($especialidadB)">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/bares2.jpg" class="responsive-img" alt="">
+                <h5 class="center">Vinos</h5>
+                <p class="light">Encuentra todos las opciones en bares de toda la ciudad y sus respectivas especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+        <!--   especialidadC!   -->
+    <div class="row" *ngIf="especialidadC">
+      <div class="col s12 m4">
+        <a href="javascript:;" (click)="eleccion($especialidadC)">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/cafes.jpg" class="responsive-img" alt="">
+                <h5 class="center">Cafés de especialidad</h5>
+                <p class="light">Encuentra todos las opciones en cafés de toda la ciudad y sus respectivas especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="col s12 m4">
+        <a href="javascript:;" (click)="eleccion($especialidadC)">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/cafes.jpg" class="responsive-img" alt="">
+                <h5 class="center">Reposterias</h5>
+                <p class="light">Encuentra todos las opciones en cafés de toda la ciudad y sus respectivas especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="col s12 m4">
+        <a href="javascript:;" (click)="eleccion($especialidadC)">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/cafes.jpg" class="responsive-img" alt="">
+                <h5 class="center">Chocolate</h5>
+                <p class="light">Encuentra todos las opciones en cafés de toda la ciudad y sus respectivas especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+        <!--   Restaurantes parrilla!   -->
+    <div class="row" *ngIf="parrilla">
+      <div class="col s12 m4">
+        <a href="javascript:;">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/restaurates.jpg" class="responsive-img" alt="">
+                <h5 class="center">Asados la 80</h5>
+                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                  especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="col s12 m4">
+        <a href="javascript:;" (click)="cambio($event)">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/restaurates.jpg" class="responsive-img" alt="">
+                <h5 class="center">Casa Blanca</h5>
+                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                  especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="col s12 m4">
+        <a href="javascript:;" (click)="cambio($event)">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/restaurates.jpg" class="responsive-img" alt="">
+                <h5 class="center">Denver</h5>
+                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                  especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+            <!--   Restaurantes oriental!   -->
+    <div class="row" *ngIf="oriental">
+      <div class="col s12 m4">
+        <a href="javascript:;">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/restaurates.jpg" class="responsive-img" alt="">
+                <h5 class="center">Sarku Japan</h5>
+                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                  especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="col s12 m4">
+        <a href="javascript:;" (click)="cambio($event)">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/restaurates.jpg" class="responsive-img" alt="">
+                <h5 class="center">Kabuki</h5>
+                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                  especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="col s12 m4">
+        <a href="javascript:;" (click)="cambio($event)">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/restaurates.jpg" class="responsive-img" alt="">
+                <h5 class="center">Wakame</h5>
+                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                  especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+            <!--   Restaurantes italiana!   -->
+    <div class="row" *ngIf="italiana">
+      <div class="col s12 m4">
+        <a href="javascript:;">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/restaurates.jpg" class="responsive-img" alt="">
+                <h5 class="center">Parmessano</h5>
+                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                  especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="col s12 m4">
+        <a href="javascript:;" (click)="cambio($event)">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/restaurates.jpg" class="responsive-img" alt="">
+                <h5 class="center">Nino e Pastino</h5>
+                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                  especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="col s12 m4">
+        <a href="javascript:;" (click)="cambio($event)">
+          <div class="card z-depth-3">
+            <div class="card-content">
+              <div class="icon-block">
+                <img src="../../../assets/restaurates.jpg" class="responsive-img" alt="">
+                <h5 class="center">Il Forno</h5>
+                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                  especialidades.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+
   </div>
+</div>
+
+
