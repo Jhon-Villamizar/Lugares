@@ -8,8 +8,8 @@ const lugarSchema = new Schema({
     especialidad:{type:String, required:true},
     direccion:{type:String, required:true},
     telefono:{type:String, required:true},
-    correo:{type:String, required:true},
-    web:{type:String, required:true},
+    correo:{type:String},
+    web:{type:String},
     calificacion:{type:Array, required:true},
     imagen:{type:String, required:true}
 });
