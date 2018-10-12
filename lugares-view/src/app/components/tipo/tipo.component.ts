@@ -21,6 +21,12 @@ export class TipoComponent implements OnInit {
   parrilla=false;
   oriental=false;
   italiana=false;
+  cerveza=false;
+  vino=false;
+  coctel=false;
+  especialidad=false;
+  reposteria=false;
+  chocolate=false;
 
   // IF Tipos
   restaurantes(mostrarR){
@@ -34,7 +40,7 @@ export class TipoComponent implements OnInit {
     if (this.tipos == true) {
       this.tipos = false;
       this.especialidadB=true;
-      this.title = 'Bares por tipo'
+      this.title = 'Bares por especialidad'
     }
   }
   cafes(mostrarC){
@@ -44,26 +50,72 @@ export class TipoComponent implements OnInit {
       this.title = 'Cafés por especialidad'
     }
   }
-  //If 
-  eleccion1(especialidad) {
+  //If espaecialidad restaurantes
+  restaurante1(especialidad) {
     if (this.especialidadR==true) {
       this.especialidadR = false;
       this.parrilla = true;
       this.title = `Restaurantes de parrilla!`
     }
   }
-  eleccion2(especialidad) {
+  restaurante2(especialidad) {
     if (this.especialidadR==true) {
       this.especialidadR = false;
       this.oriental = true;
       this.title = 'Restaurantes orientales!'
     }
   }
-  eleccion3(especialidad) {
+  restaurante3(especialidad) {
     if (this.especialidadR==true) {
       this.especialidadR = false;
       this.italiana = true;
       this.title = 'Restaurantes italianos!'
+    }
+  }
+
+  //If espaecialidad bares
+  bar1(especialidad) {
+    if (this.especialidadB == true) {
+      this.especialidadB = false;
+      this.cerveza = true;
+      this.title = `Bares especializados en cervezas!`
+    }
+  }
+  bar2(especialidad) {
+    if (this.especialidadB == true) {
+      this.especialidadB = false;
+      this.vino = true;
+      this.title = 'Bares especializados en vinos!'
+    }
+  }
+  bar3(especialidad) {
+    if (this.especialidadB == true) {
+      this.especialidadB = false;
+      this.coctel = true;
+      this.title = 'Bares especializados en cocteles!'
+    }
+  }
+
+  //If espaecialidad cafes
+  cafe1(especialidad) {
+    if (this.especialidadC == true) {
+      this.especialidadC = false;
+      this.especialidad = true;
+      this.title = `Cafes especializados en cafe de especialidad!`
+    }
+  }
+  cafe2(especialidad) {
+    if (this.especialidadC == true) {
+      this.especialidadC = false;
+      this.reposteria = true;
+      this.title = 'Cafes especializados en reposteria!'
+    }
+  }
+  cafe3(especialidad) {
+    if (this.especialidadC == true) {
+      this.especialidadC = false;
+      this.chocolate = true;
+      this.title = 'Cafes especializados en chocolate!'
     }
   }
 
