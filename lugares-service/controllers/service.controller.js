@@ -1,6 +1,6 @@
 const Lugar = require('../models/lugar');
-// const Mail = require('../models/mail');
-// const nodemailer = require('nodemailer');
+const Mail = require('../models/mail');
+const nodemailer = require('nodemailer');
 const serviceCtrl = {};
 
 serviceCtrl.listarLugares = async (req, res) => {
@@ -53,28 +53,31 @@ serviceCtrl.eliminarLugar = async (req, res) => {
     res.json({Lugar: 'Eliminado'})
 }
 
-// serviceCtrl.enviarMail =  (req, res) => {
-//     const transporter = nodemailer.createTransport({
-//         service: 'gmail',
-//         auth: {
-//             user: 'jhamiltonvo@gmail.com',
-//             pass: '56042041Nick'
-//         }
-//     });
-//     const mailOptions = {
-//         from: 'jhamiltonvo@gmail.com',
-//         to: 'jhonvio@hotmail.com',
-//         subject: 'Correo enviado desde web de lugares',
-//         text: 'Nombre: '+ req.body.nombremail +' Email: ' + req.body.email+ ' Mensaje: '+req.body.msj
-//     };
-//      transporter.sendMail(mailOptions, function (error, info) {
-//         if (error) {
-//             console.log(error);
-//         } else {
-//             console.log('Email enviado: ' + info.response);
-//         }
-//     });
-// }
+serviceCtrl.enviarMail =  (req, res) => {
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'jhamiltonvo@gmail.com',
+            pass: '56042041Nick'
+        }
+    });
+    const mailOptions = {
+        from: 'jhamiltonvo@gmail.com',
+        to: 'jhonvio@hotmail.com',
+        subject: 'Correo enviado desde web de lugares',
+        text: `Nombre: ${req.body.nombremail}\n Email: ${req.body.email}\n Mensaje: ${req.body.msj}`
+    };
+     transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email enviado: ' + info.response);
+            res.json({
+                estatus: 'mensaje enviado'
+            });
+        }
+    });
+}
 
 
 module.exports = serviceCtrl;

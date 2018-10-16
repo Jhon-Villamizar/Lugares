@@ -7,6 +7,6 @@ router.get('/:id', service.buscarLugar);
 router.post('/', service.crearEmpleado);
 router.put('/:id', service.editarLugar);
 router.delete('/:id', service.eliminarLugar);
-// router.post('/mail', service.enviarMail);
+router.post('/mail', service.enviarMail);
 
 module.exports = router;
