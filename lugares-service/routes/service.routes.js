@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const service = require('../controllers/service.controller');
 
-router.get('/', service.listarLugares);
-router.get('/:id', service.buscarLugar);
-router.post('/', service.crearEmpleado);
-router.put('/:id', service.editarLugar);
-router.delete('/:id', service.eliminarLugar);
-router.post('/mail', service.enviarMail);
+router.get('/lugares', service.listarLugares);
+router.get('/lugares/:id', service.buscarLugar);
+router.post('/lugares', service.crearEmpleado);
+router.put('/lugares/:id', service.editarLugar);
+router.delete('/lugares/:id', service.eliminarLugar);
+router.post('/email', service.enviarMail);
 
 module.exports = router;

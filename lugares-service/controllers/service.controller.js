@@ -1,5 +1,5 @@
-const Lugar = require('../models/lugar');
-const Mail = require('../models/mail');
+const Lugar = require('../models/Lugar');
+const Email = require('../models/Email');
 const nodemailer = require('nodemailer');
 const serviceCtrl = {};
 
