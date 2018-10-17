@@ -24,6 +24,7 @@ serviceCtrl.crearEmpleado = async (req, res) => {
         correo: req.body.correo,
         web: req.body.web,
         calificacion: req.body.calificacion,
+        descripcion: req.body.descripcion,
         imagen: req.body.imagen
     });
     await lugar.save();
@@ -42,6 +43,7 @@ serviceCtrl.editarLugar = async (req, res) => {
         correo: req.body.correo,
         web: req.body.web,
         calificacion: req.body.calificacion,
+        descripcion: req.body.descripcion,
         imagen: req.body.imagen
     };
     await Lugar.findByIdAndUpdate(id, {$set: lugar}, {new: true});

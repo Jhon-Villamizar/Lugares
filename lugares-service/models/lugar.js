@@ -11,6 +11,7 @@ const lugarSchema = new Schema({
     correo:{type:String},
     web:{type:String},
     calificacion:{type:Array, required:true},
+    descripcion:{type:String, required:true},
     imagen:{type:String, required:true}
 });
 
