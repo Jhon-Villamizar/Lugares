@@ -1,8 +1,10 @@
-const mongoose = require('mongoose');
-const URL = 'mongodb://jhon:19870805jhon@ds027748.mlab.com:27748/lugares';
+const admin = require('firebase-admin');
 
-mongoose.connect(URL, {useNewUrlParser: true})
-    .then(db => console.log('DB is connected'))
-    .catch(err => console.error(err));
+var serviceAccount = require('./callejiandox2-lugares-firebase-adminsdk-36hlg-0c91b3ee1e.json');
 
-module.exports = mongoose;
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: 'https://callejiandox2-lugares.firebaseio.com'
+});
+
+module.exports = admin;

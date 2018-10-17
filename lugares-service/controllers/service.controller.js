@@ -6,6 +6,8 @@ const serviceCtrl = {};
 serviceCtrl.listarLugares = async (req, res) => {
     const lugares = await Lugar.find();
     res.json(lugares);
+    console.log(lugares);
+    
 }
 
 serviceCtrl.buscarLugar = async (req, res) => {
@@ -13,7 +15,7 @@ serviceCtrl.buscarLugar = async (req, res) => {
     res.json(lugar);
 }
 
-serviceCtrl.crearEmpleado = async (req, res) => {
+serviceCtrl.crearLugar = async (req, res) => {
     const lugar = new Lugar({
         nombre: req.body.nombre,
         lugar: req.body.lugar,
