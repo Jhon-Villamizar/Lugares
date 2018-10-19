@@ -13,9 +13,10 @@ serviceCtrl.buscarLugar = async (req, res) => {
     res.json(lugar);
 }
 
-serviceCtrl.crearEmpleado = async (req, res) => {
+serviceCtrl.crearLugaar = async (req, res) => {
     const lugar = new Lugar({
         nombre: req.body.nombre,
+        ciudad: req.body.ciudad,
         lugar: req.body.lugar,
         tipo: req.body.tipo,
         especialidad: req.body.especialidad,
@@ -25,7 +26,9 @@ serviceCtrl.crearEmpleado = async (req, res) => {
         web: req.body.web,
         calificacion: req.body.calificacion,
         descripcion: req.body.descripcion,
-        imagen: req.body.imagen
+        imagen: req.body.imagen,
+        punto: req.body.punto,
+        horarios: req.body.horarios
     });
     await lugar.save();
     res.json({Lugar: 'Creado'});
@@ -35,6 +38,7 @@ serviceCtrl.editarLugar = async (req, res) => {
     const { id } = req.params;
     const lugar = {
         nombre: req.body.nombre,
+        ciudad: req.body.ciudad,
         lugar: req.body.lugar,
         tipo: req.body.tipo,
         especialidad: req.body.especialidad,
@@ -44,7 +48,9 @@ serviceCtrl.editarLugar = async (req, res) => {
         web: req.body.web,
         calificacion: req.body.calificacion,
         descripcion: req.body.descripcion,
-        imagen: req.body.imagen
+        imagen: req.body.imagen,
+        punto: req.body.punto,
+        horarios: req.body.horarios
     };
     await Lugar.findByIdAndUpdate(id, {$set: lugar}, {new: true});
     res.json({Lugar: 'Editado'});
