@@ -17,29 +17,13 @@
             </thead>
     
             <tbody>
-              <tr>
-                <td>Sarku Japan</td>
-                <td>Restaurante</td>
-                <td>Oriental</td>
-                <td>local 3120</td>
-                <td>Centro Comercial Los Molinos</td>
-                <td class="center-align"><star-rating [starType]="'svg'" [showHalfStars]="true" [rating]="2.5"></star-rating></td>
-              </tr>
-              <tr>
-                <td>La Octava</td>
-                <td>Bar</td>
-                <td>Bebidas</td>
-                <td>Calle 8#37a-49</td>
-                <td>Lleras</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Pergamino</td>
-                <td>Café</td>
-                <td>Cafés de especialidad</td>
-                <td>Carrera 37#8A-37</td>
-                <td>Lleras</td>
-                <td></td>
+              <tr *ngFor="let lugar of servicioService.lugares">
+                <td>{{lugar.nombre}}</td>
+                <td>{{lugar.tipo}}</td>
+                <td>{{lugar.especialidad}}</td>
+                <td>{{lugar.direccion}}</td>
+                <td>{{lugar.lugar}}</td>
+                <td class="center-align"><star-rating [starType]="'svg'" [showHalfStars]="true" [rating]="3.5"></star-rating></td>
               </tr>
             </tbody>
           </table>
