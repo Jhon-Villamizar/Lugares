@@ -4,7 +4,15 @@ const nodemailer = require('nodemailer');
 const serviceCtrl = {};
 
 serviceCtrl.listarLugares = async (req, res) => {
-    const lugares = await Lugar.find();
+    const lugares = await Lugar.find();     
+    lugares.forEach(lugar => {
+        let calificaciones = []; 
+        calificaciones = lugar.calificacion;
+        let suma = calificaciones.reduce((previous, current) => current += previous);
+        let contador = calificaciones.length;
+        let promedio = suma / contador;
+        console.log("promedio =>", promedio);
+    });
     res.json(lugares);
 }
 
