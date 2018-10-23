@@ -17,7 +17,7 @@ export class ListaComponent implements OnInit {
   listarLugares() {
     this.servicioService.obtenerLugares()
       .subscribe(res => {
-        this.servicioService.lugares = res as Lugar[];
+        this.servicioService.lugares = res as {};
       });
   }
 }

@@ -2,7 +2,7 @@ export class Lugar {
     /**
      *
      */
-    constructor(_id='', nombre='', ciudad='', lugar='', tipo='', especialidad='', direccion='', telefono='', correo='', web='', descripcion='', calificacion=0, imagen='', punto='', horario='') {
+    constructor(_id='', nombre='', ciudad='', lugar='', tipo='', especialidad='', direccion='', telefono='', correo='', web='', descripcion='', calificacion=0, imagen='', punto='', horario='', promedio=0) {
         this._id=_id,
         this.nombre=nombre,
         this.ciudad=ciudad,
@@ -17,7 +17,8 @@ export class Lugar {
         this.calificacion=calificacion,
         this.imagen=imagen,
         this.punto=punto,
-        this.horario=horario
+        this.horario=horario,
+        this.promedio=promedio
     }
     _id: string;
     nombre: String;
@@ -33,5 +34,6 @@ export class Lugar {
     calificacion: Number;
     imagen: String;
     punto: Object;
-    horario: String
+    horario: String;
+    promedio: Number;
 }

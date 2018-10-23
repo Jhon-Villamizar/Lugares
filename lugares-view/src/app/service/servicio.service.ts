@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class ServicioService {
   seleccionarLugar: Lugar;
   seleccionarEmail: Email;
-  lugares: Lugar[];
+  lugares: {};
   readonly URL_API = 'http://localhost:3000/api/lugares';
   readonly URL_API_EMAIL = 'http://localhost:3000/api/email';
 

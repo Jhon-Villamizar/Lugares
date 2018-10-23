@@ -4,16 +4,29 @@ const nodemailer = require('nodemailer');
 const serviceCtrl = {};
 
 serviceCtrl.listarLugares = async (req, res) => {
-    const lugares = await Lugar.find();     
+    const lugares = await Lugar.find(); 
+    const respuesta = [];    
     lugares.forEach(lugar => {
         let calificaciones = []; 
         calificaciones = lugar.calificacion;
         let suma = calificaciones.reduce((previous, current) => current += previous);
         let contador = calificaciones.length;
         let promedio = suma / contador;
-        console.log("promedio =>", promedio);
+        lugar.promedio = promedio;
+        respuesta.push({lugar: lugar, promedio: promedio});
     });
-    res.json(lugares);
+    respuesta.sort(sortFunc);
+    console.log("respuesta =>", respuesta);
+    res.json({respuesta: respuesta});
+}
+
+function sortFunc(a, b) {
+    if (a.promedio < b.promedio) 
+      return 1;
+    if (a.promedio > b.promedio)
+      return -1;
+
+    return 0;
 }
 
 serviceCtrl.buscarLugar = async (req, res) => {

@@ -15,11 +15,11 @@ export class TipoComponent implements OnInit {
     this.listarLugares();
   }
 
-  listarLugares(){
+  listarLugares() {
     this.servicioService.obtenerLugares()
-    .subscribe( res => {
-      this.servicioService.lugares = res as Lugar[];
-    });
+      .subscribe(res => {
+        this.servicioService.lugares = res as {};
+      });
   }
 
   
