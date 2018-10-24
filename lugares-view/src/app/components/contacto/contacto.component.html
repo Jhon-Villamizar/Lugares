@@ -1,38 +1,39 @@
 <div class="container" id="contactanos">
-  <div class="row">
+  <section class="section">
     <h3 class="center-align">Contáctenos</h3>
-    <div class="col s2"></div>
-    <div class="col s8">
-      <div class="card">
-        <div class="card-content">
-          <form class="center-block" #emailForm="ngForm" (ngSubmit)="enviarEmail(emailForm)">
-            <div class="row">
-              <div class="input-field col s6">
-                <input id="nombremail" type="text" class="validate" name="nombremail" #nombremail="ngModel" [(ngModel)]="servicioService.seleccionarEmail.nombremail" required>
-                <label for="nombremail">Nombre</label>
+    <div class="row">
+      <div class="col s2"></div>
+      <div class="col s8">
+        <div class="card">
+          <div class="card-content">
+            <form class="center-block" #emailForm="ngForm" (ngSubmit)="enviarEmail(emailForm)">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="nombremail" type="text" class="validate" name="nombremail" #nombremail="ngModel" [(ngModel)]="servicioService.seleccionarEmail.nombremail" required>
+                  <label for="nombremail">Nombre</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="email" type="email" class="validate" name="email" #email="ngModel" [(ngModel)]="servicioService.seleccionarEmail.email" required>
+                  <label for="email">Email</label>
+                </div>
               </div>
-              <div class="input-field col s6">
-                <input id="email" type="email" class="validate" name="email" #email="ngModel" [(ngModel)]="servicioService.seleccionarEmail.email" required>
-                <label for="email">Email</label>
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="msj" class="materialize-textarea" name="msj" #msj="ngModel" [(ngModel)]="servicioService.seleccionarEmail.msj" required></textarea>
+                  <label for="msj">Mensaje</label>
+                </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea id="msj" class="materialize-textarea" name="msj" #msj="ngModel" [(ngModel)]="servicioService.seleccionarEmail.msj" required></textarea>
-                <label for="msj">Mensaje</label>
+              <div class="row">
+                <div class="card-action">
+                  <button class="waves-effect blue btn right" style="margin-left: 2px;"><i class="material-icons right">send</i>Enviar</button>
+                  <button class="waves-effect blue btn right" (click)="borrarForm(emailForm)"><i class="material-icons right">edit</i>Borrar</button>
+                </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="card-action">
-                <button class="waves-effect blue btn right" style="margin-left: 2px;"><i class="material-icons right">send</i>Enviar</button>
-                <button class="waves-effect blue btn right" (click)="borrarForm(emailForm)"><i class="material-icons right">edit</i>Borrar</button>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
+      <div class="col s2"></div>
     </div>
-    
-    <div class="col s2"></div>
-  </div>
+  </section>
 </div>

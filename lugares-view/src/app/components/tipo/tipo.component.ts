@@ -21,9 +21,7 @@ export class TipoComponent implements OnInit {
         this.servicioService.lugares = res as {};
       });
   }
-
   
-
   // info inicial de clasificacion
   title = 'Clasificación';
   tipos=true;
