@@ -1,7 +1,7 @@
-const firebase = require('firebase-admin');
-var FirebaseSchema = require('firebase-schema');
+const admin = require('firebase-admin');
+const FirebaseSchema = require('firebase-schema');
 
-var {
+const {
     Array,
     string,
     number,
@@ -12,18 +12,19 @@ var {
     key
 } = FirebaseSchema.Types;
 
-var HOST = 'https://callejiandox2-lugares.firebaseio.com';
+const HOST = 'https://callejiandox2-lugares.firebaseio.com';
 
 // pass in Firebase so you can use this on the server or client
-var schema = FirebaseSchema.create(Firebase, HOST, (child) => {
-            child('users', list, (child) => {
-                child(':userId', hash, (child) => {
-                    child('name', string);
-                    child('groups', index('../../groups'), (child) => {
-                        child(':groupId', boolean);
-                    });
-                });
+const schema = FirebaseSchema.create(Firebase, HOST, (child) => {
+    child('nombre', string);
+    child('direccion', string, (child) => {
+        child(':direccionciudad', hash, (child) => {
+            child('name', string);
+            child('groups', index('../../groups'), (child) => {
+                child(':groupId', boolean);
             });
+        });
+    });
 }
 
 // const lugarSchema = new Schema({
