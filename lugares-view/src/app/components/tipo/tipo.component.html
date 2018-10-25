@@ -200,14 +200,16 @@
     </div>
 
     <!--   Restaurantes parrilla!   -->
-    <div class="row" *ngIf="parrilla">
+    <div class="row row-cards" *ngIf="parrilla">
       <div *ngFor="let lugar of servicioService.lugares.respuesta">
         <div class="col s12 m4" *ngIf="lugar.lugar.especialidad=='Parrilla'">
           <a href="javascript:;">
             <div class="card z-depth-3">
               <div class="card-content">
                 <div class="icon-block">
-                  <img [src]="lugar.lugar.imagen" class="responsive-img" alt="">
+                  <div class="imagenes">
+                    <img [src]="lugar.lugar.imagen" class="responsive-img" alt="">
+                  </div>
                   <h5 class="center">{{lugar.lugar.nombre}}</h5>
                   <p class="light">{{lugar.lugar.descripcion}}</p>
                 </div>
