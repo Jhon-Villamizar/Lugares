@@ -63,6 +63,7 @@ export class TipoComponent implements OnInit {
         this.italiana = false;
         this.title = 'Clasificación';
         this.retroceder = false;
+        this.inicio = false;
       }
     }
   // If Tipos

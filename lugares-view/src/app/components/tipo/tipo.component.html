@@ -15,7 +15,7 @@
               <div class="icon-block">
                 <img src="../../../assets/imagenes/restaurates.jpg" class="responsive-img" alt="">
                 <h5 class="center">Restaurantes</h5>
-                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                <p class="light text-justify">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
                   especialidades.</p>
               </div>
             </div>
@@ -30,7 +30,7 @@
               <div class="icon-block">
                 <img src="../../../assets/imagenes/bares2.jpg" class="responsive-img" alt="">
                 <h5 class="center">Bares</h5>
-                <p class="light">Encuentra todos las opciones en bares de toda la ciudad y sus respectivas
+                <p class="light text-justify">Encuentra todos las opciones en bares de toda la ciudad y sus respectivas
                   especialidades.</p>
               </div>
             </div>
@@ -45,7 +45,7 @@
               <div class="icon-block">
                 <img src="../../../assets/imagenes/cafes.jpg" class="responsive-img" alt="">
                 <h5 class="center">Cafés</h5>
-                <p class="light">Encuentra todos las opciones en cafés de toda la ciudad y sus respectivas
+                <p class="light text-justify">Encuentra todos las opciones en cafés de toda la ciudad y sus respectivas
                   especialidades.</p>
               </div>
             </div>
@@ -63,7 +63,7 @@
               <div class="icon-block">
                 <img src="../../../assets/imagenes/restaurates.jpg" class="responsive-img" alt="">
                 <h5 class="center">Parrilla</h5>
-                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                <p class="light text-justify">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
                   especialidades.</p>
               </div>
             </div>
@@ -78,7 +78,7 @@
               <div class="icon-block">
                 <img src="../../../assets/imagenes/restaurates.jpg" class="responsive-img" alt="">
                 <h5 class="center">Oriental</h5>
-                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                <p class="light text-justify">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
                   especialidades.</p>
               </div>
             </div>
@@ -93,7 +93,7 @@
               <div class="icon-block">
                 <img src="../../../assets/imagenes/restaurates.jpg" class="responsive-img" alt="">
                 <h5 class="center">Italiana</h5>
-                <p class="light">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
+                <p class="light text-justify">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
                   especialidades.</p>
               </div>
             </div>
@@ -103,99 +103,44 @@
     </div>
 
     <!--   especialidadB!   -->
-    <div class="row" *ngIf="especialidadB">
-      <div class="col s12 m4">
-        <a href="javascript:;">
-          <div class="card z-depth-3">
-            <div class="card-content">
-              <div class="icon-block">
-                <img src="../../../assets/imagenes/bares2.jpg" class="responsive-img" alt="">
-                <h5 class="center">Cervezas</h5>
-
-                <p class="light">Encuentra todos las opciones en bares de toda la ciudad y sus respectivas
-                  especialidades.</p>
+    <div class="row row-cards" *ngIf="especialidadB">
+      <div *ngFor="let lugar of servicioService.lugares.respuesta">
+        <div class="col s12 m4" *ngIf="lugar.lugar.tipo=='Bar'">
+          <a href="javascript:;">
+            <div class="card z-depth-3">
+              <div class="card-content">
+                <div class="icon-block">
+                  <div class="imagenes">
+                    <img [src]="lugar.lugar.imagen" class="responsive-img" alt="" height="125px">
+                  </div>
+                  <h5 class="center">{{lugar.lugar.nombre}}</h5>
+                  <p class="light text-justify">{{lugar.lugar.descripcion}}</p>
+                </div>
               </div>
             </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="col s12 m4">
-        <a href="javascript:;">
-          <div class="card z-depth-3">
-            <div class="card-content">
-              <div class="icon-block">
-                <img src="../../../assets/imagenes/bares2.jpg" class="responsive-img" alt="">
-                <h5 class="center">Cocteles</h5>
-                <p class="light">Encuentra todos las opciones en bares de toda la ciudad y sus respectivas
-                  especialidades.</p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="col s12 m4">
-        <a href="javascript:;">
-          <div class="card z-depth-3">
-            <div class="card-content">
-              <div class="icon-block">
-                <img src="../../../assets/imagenes/bares2.jpg" class="responsive-img" alt="">
-                <h5 class="center">Vinos</h5>
-                <p class="light">Encuentra todos las opciones en bares de toda la ciudad y sus respectivas
-                  especialidades.</p>
-              </div>
-            </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     </div>
 
     <!--   especialidadC!   -->
-    <div class="row" *ngIf="especialidadC">
-      <div class="col s12 m4">
-        <a href="javascript:;">
-          <div class="card z-depth-3">
-            <div class="card-content">
-              <div class="icon-block">
-                <img src="../../../assets/imagenes/cafes.jpg" class="responsive-img" alt="">
-                <h5 class="center">Cafés de especialidad</h5>
-                <p class="light">Encuentra todos las opciones en cafés de toda la ciudad y sus respectivas
-                  especialidades.</p>
+    <div class="row row-cards" *ngIf="especialidadC">
+      <div *ngFor="let lugar of servicioService.lugares.respuesta">
+        <div class="col s12 m4" *ngIf="lugar.lugar.especialidad=='Cafe'">
+          <a href="javascript:;">
+            <div class="card z-depth-3">
+              <div class="card-content">
+                <div class="icon-block">
+                  <div class="imagenes">
+                     <img [src]="lugar.lugar.imagen" class="responsive-img" alt="" height="125px">
+                  </div>
+                  <h5 class="center">{{lugar.lugar.nombre}}</h5>
+                  <p class="light text-justify">{{lugar.lugar.descripcion}}</p>
+                </div>
               </div>
             </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="col s12 m4">
-        <a href="javascript:;">
-          <div class="card z-depth-3">
-            <div class="card-content">
-              <div class="icon-block">
-                <img src="../../../assets/imagenes/cafes.jpg" class="responsive-img" alt="">
-                <h5 class="center">Reposterias</h5>
-                <p class="light">Encuentra todos las opciones en cafés de toda la ciudad y sus respectivas
-                  especialidades.</p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="col s12 m4">
-        <a href="javascript:;">
-          <div class="card z-depth-3">
-            <div class="card-content">
-              <div class="icon-block">
-                <img src="../../../assets/imagenes/cafes.jpg" class="responsive-img" alt="">
-                <h5 class="center">Chocolate</h5>
-                <p class="light">Encuentra todos las opciones en cafés de toda la ciudad y sus respectivas
-                  especialidades.</p>
-              </div>
-            </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -203,7 +148,7 @@
     <div class="row row-cards" *ngIf="parrilla">
       <div *ngFor="let lugar of servicioService.lugares.respuesta">
         <div class="col s12 m4" *ngIf="lugar.lugar.especialidad=='Parrilla'">
-          <a href="javascript:;">
+          <a href="javascript:;" data-toggle="modal" data-target=".bd-example-modal-lg">
             <div class="card z-depth-3">
               <div class="card-content">
                 <div class="icon-block">
@@ -211,7 +156,10 @@
                     <img [src]="lugar.lugar.imagen" class="responsive-img" alt="">
                   </div>
                   <h5 class="center">{{lugar.lugar.nombre}}</h5>
-                  <p class="light">{{lugar.lugar.descripcion}}</p>
+                  <p class="text-center"><b>{{lugar.lugar.especialidad}}</b></p>
+                  <p class="text-center"><b>{{lugar.lugar.lugar}}</b></p>
+                  <p class="text-center"><b>{{lugar.lugar.direccion}}</b></p>
+                  <p class="text-center"><star-rating [starType]="'svg'" [showHalfStars]="true" [rating]="lugar.promedio"></star-rating><b>({{lugar.contador}}<i class="large material-icons i-personas">people</i>)</b></p>
                 </div>
               </div>
             </div>
@@ -221,16 +169,18 @@
     </div>
 
     <!--   Restaurantes oriental!   -->
-    <div class="row" *ngIf="oriental">
-      <div *ngFor="let lugar of servicioService.lugares">
-        <div class="col s12 m4" *ngIf="lugar.especialidad=='Oriental'">
+    <div class="row row-cards" *ngIf="oriental">
+      <div *ngFor="let lugar of servicioService.lugares.respuesta">
+        <div class="col s12 m4" *ngIf="lugar.lugar.especialidad=='Oriental'">
           <a href="javascript:;">
             <div class="card z-depth-3">
               <div class="card-content">
                 <div class="icon-block">
-                  <img [src]="lugar.imagen" class="responsive-img" alt="">
-                  <h5 class="center">{{lugar.nombre}}</h5>
-                  <p class="light">{{lugar.descripcion}}</p>
+                  <div class="imagenes">
+                    <img [src]="lugar.lugar.imagen" class="responsive-img" alt="">
+                  </div>
+                  <h5 class="center">{{lugar.lugar.nombre}}</h5>
+                  <p class="light text-justify">{{lugar.lugar.descripcion}}</p>
                 </div>
               </div>
             </div>
@@ -239,16 +189,18 @@
       </div>
     </div>
     <!--   Restaurantes italiana!   -->
-    <div class="row" *ngIf="italiana">
-      <div *ngFor="let lugar of servicioService.lugares">
-        <div class="col s12 m4" *ngIf="lugar.especialidad=='Italiana'">
+    <div class="row row-cards" *ngIf="italiana">
+      <div *ngFor="let lugar of servicioService.lugares.respuesta">
+        <div class="col s12 m4" *ngIf="lugar.lugar.especialidad=='Italiana'">
           <a href="javascript:;">
             <div class="card z-depth-3">
               <div class="card-content">
                 <div class="icon-block">
-                  <img [src]="lugar.imagen" class="responsive-img" alt="" height="125px">
-                  <h5 class="center">{{lugar.nombre}}</h5>
-                  <p class="light">{{lugar.descripcion}}</p>
+                  <div class="imagenes">
+                     <img [src]="lugar.lugar.imagen" class="responsive-img" alt="" height="125px">
+                  </div>
+                  <h5 class="center">{{lugar.lugar.nombre}}</h5>
+                  <p class="light text-justify">{{lugar.lugar.descripcion}}</p>
                 </div>
               </div>
             </div>
@@ -257,8 +209,6 @@
       </div>
     </div>
     <!-- Modal Trigger -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
-
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">

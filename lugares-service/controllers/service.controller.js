@@ -13,7 +13,8 @@ serviceCtrl.listarLugares = async (req, res) => {
         let contador = calificaciones.length;
         let promedio = suma / contador;
         lugar.promedio = promedio;
-        respuesta.push({lugar: lugar, promedio: promedio});
+        lugar.contador = contador;
+        respuesta.push({lugar: lugar, promedio: promedio, contador: contador});
     });
     respuesta.sort(sortFunc);
     console.log("respuesta =>", respuesta);
