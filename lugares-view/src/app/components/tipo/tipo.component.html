@@ -148,7 +148,7 @@
     <div class="row row-cards" *ngIf="parrilla">
       <div *ngFor="let lugar of servicioService.lugares.respuesta">
         <div class="col s12 m4" *ngIf="lugar.lugar.especialidad=='Parrilla'">
-          <a href="javascript:;" data-toggle="modal" data-target=".bd-example-modal-lg">
+          <a href="javascript:;" data-toggle="modal" data-target=".bd-example-modal-lg" (click)="mostrarLugar(lugar)">
             <div class="card z-depth-3">
               <div class="card-content">
                 <div class="icon-block">
@@ -156,10 +156,11 @@
                     <img [src]="lugar.lugar.imagen" class="responsive-img" alt="">
                   </div>
                   <h5 class="center">{{lugar.lugar.nombre}}</h5>
-                  <p class="text-center"><b>{{lugar.lugar.especialidad}}</b></p>
-                  <p class="text-center"><b>{{lugar.lugar.lugar}}</b></p>
-                  <p class="text-center"><b>{{lugar.lugar.direccion}}</b></p>
-                  <p class="text-center"><star-rating [starType]="'svg'" [showHalfStars]="true" [rating]="lugar.promedio"></star-rating><b>({{lugar.contador}}<i class="large material-icons i-personas">people</i>)</b></p>
+                  <p class="text-center datos">{{lugar.lugar.especialidad}}</p>
+                  <p class="text-center datos">{{lugar.lugar.lugar}}</p>
+                  <p class="text-center datos">{{lugar.lugar.direccion}}</p>
+                  <p class="estrellas"><star-rating [starType]="'svg'" [showHalfStars]="true" [readOnly]="true" [rating]="lugar.promedio"></star-rating></p>
+                  <p class="text-center datos">{{lugar.contador}}<i class="material-icons i-personas">people</i></p>
                 </div>
               </div>
             </div>
@@ -212,7 +213,53 @@
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
-          ...
+          <img [src]="modal.lugar.imagen" class="responsive-img" alt="">
+          <h5 class="center">{{modal.lugar.nombre}}</h5>
+          <p class="estrellas"><star-rating [starType]="'svg'" [showHalfStars]="true" [readOnly]="true" [rating]="modal.promedio"></star-rating></p>
+          <p class="text-center datos">{{modal.contador}}<i class="material-icons i-personas">people</i></p>
+
+          <p class="datos"><b>Especialida:</b> {{modal.lugar.especialidad}}</p>
+          <p class="datos"><b>Direccion:</b> {{modal.lugar.direccion}}, Barrio {{modal.lugar.lugar}}, {{modal.lugar.ciudad}}</p>
+          <!-- <table>
+            <tr>
+              <td><b>Lunes: </b></td>
+              <td>{{modal.lugar.horarios.lunes}}</td>
+            </tr>
+            <tr>
+              <td><b>Martes: </b></td>
+              <td>{{modal.lugar.horarios.martes}}</td>
+            </tr>
+            <tr>
+              <td><b>Miercoles: </b></td>
+              <td>{{modal.lugar.horarios.miercoles}}</td>
+            </tr>
+            <tr>
+              <td><b>Jueves: </b></td>
+              <td>{{modal.lugar.horarios.jueves}}</td>
+            </tr>
+            <tr>
+              <td><b>Viernes: </b></td>
+              <td>{{modal.lugar.horarios.viernes}}</td>
+            </tr>
+            <tr>
+              <td><b>Sabado: </b></td>
+              <td>{{modal.lugar.horarios.sabado}}</td>
+            </tr>
+            <tr>
+              <td><b>Domingo: </b></td>
+              <td>{{modal.lugar.horarios.domingo}}</td>
+            </tr>
+          </table> -->
+          <ul>
+            <p class="datos"><b>Horarios:</b>
+            <li class="horario"><b>Lunes: </b>{{modal.lugar.horarios.lunes}}</li>
+            <li class="horario"><b>Martes: </b>{{modal.lugar.horarios.martes}}</li>
+            <li class="horario"><b>Miercoles: </b>{{modal.lugar.horarios.miercoles}}</li>
+            <li class="horario"><b>Jueves: </b>{{modal.lugar.horarios.jueves}}</li>
+            <li class="horario"><b>Viernes: </b>{{modal.lugar.horarios.viernes}}</li>
+            <li class="horario"><b>Sabado: </b>{{modal.lugar.horarios.sabado}}</li>
+            <li class="horario"><b>Domingo: </b>{{modal.lugar.horarios.domingo}}</li>
+          </ul>
         </div>
       </div>
     </div>

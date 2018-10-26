@@ -1,19 +1,30 @@
 a {
     color: #000000;
 }
-div.imagenes{
+div.imagenes {
     width: 277.500px;
     height: 157.750px;
+    overflow: hidden;
     img{
         height: 100%;
-        width: auto;
+        width: 100%;
     }
 }
-.row-cards{
+.row-cards {
     display: block!important;
 }
-.i-personas{
-    font-size: x-large;
+.i-personas {
+    font-size: large;
     position: relative;
-    top: 5px;
+    top: 3px;
+}
+.datos {
+    line-height: 1;
+}
+.estrellas {
+    margin-top: 6px!important;
+    margin-bottom: -3px!important;
+}
+.horario {
+    margin-left: 70px;
 }

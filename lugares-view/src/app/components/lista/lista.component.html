@@ -7,11 +7,11 @@
         <table class="striped responsive-table">
             <thead>
               <tr>
-                  <th>Nombre</th>
-                  <th>Tipo</th>
-                  <th>Especialidad</th>
-                  <th>Direccion</th>
-                  <th>Lugar</th>
+                  <th class="text-left">Nombre</th>
+                  <th class="text-left">Tipo</th>
+                  <th class="text-left">Especialidad</th>
+                  <th class="text-left">Direccion</th>
+                  <th class="text-left">Lugar</th>
                   <th class="center-align">Calificacion</th>
               </tr>
             </thead>
@@ -23,7 +23,7 @@
                 <td *ngIf="i<5">{{lugar.lugar.especialidad}}</td>
                 <td *ngIf="i<5">{{lugar.lugar.direccion}}</td>
                 <td *ngIf="i<5">{{lugar.lugar.lugar}}</td>
-                <td *ngIf="i<5" class="center-align"><star-rating [starType]="'svg'" [showHalfStars]="true" [rating]="lugar.promedio"></star-rating></td>
+                <td *ngIf="i<5" class="center-align"><star-rating [starType]="'svg'" [showHalfStars]="true" [readOnly]="true" [rating]="lugar.promedio"></star-rating></td>
               </tr>
             </tbody>
           </table>
