@@ -8,7 +8,7 @@ app.set('port', process.env.PORT || 3000);
 // middlewares
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(cors({origin: 'http://localhost:4200'}));
+// app.use(cors({origin: 'http://localhost:4200'}));
 // routes
 app.use('/api', require('../routes/service.routes'));
 // init server
