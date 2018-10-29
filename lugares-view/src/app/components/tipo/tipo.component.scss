@@ -10,6 +10,16 @@ div.imagenes {
         width: 100%;
     }
 }
+div.img-modal {
+  width: 667.297px;
+  height: 300px;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
 .row-cards {
     display: block!important;
 }
@@ -27,4 +37,10 @@ div.imagenes {
 }
 .horario {
     margin-left: 70px;
+    .lunes{margin-left: 26px}
+    .martes{margin-left: 18px}
+    .jueves{margin-left: 21px}
+    .viernes{margin-left: 16px}
+    .sabado{margin-left: 16px}
+    .domingo{margin-left: 2px}
 }

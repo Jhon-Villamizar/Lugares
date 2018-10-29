@@ -18,11 +18,11 @@
     
             <tbody>
               <tr *ngFor="let lugar of servicioService.lugares.respuesta; let i=index">
-                <td *ngIf="i<5">{{lugar.lugar.nombre}}</td>
-                <td *ngIf="i<5">{{lugar.lugar.tipo}}</td>
-                <td *ngIf="i<5">{{lugar.lugar.especialidad}}</td>
-                <td *ngIf="i<5">{{lugar.lugar.direccion}}</td>
-                <td *ngIf="i<5">{{lugar.lugar.lugar}}</td>
+                <td *ngIf="i<5">{{lugar.lugar?.nombre}}</td>
+                <td *ngIf="i<5">{{lugar.lugar?.tipo}}</td>
+                <td *ngIf="i<5">{{lugar.lugar?.especialidad}}</td>
+                <td *ngIf="i<5">{{lugar.lugar?.direccion}}</td>
+                <td *ngIf="i<5">{{lugar.lugar?.lugar}}</td>
                 <td *ngIf="i<5" class="center-align"><star-rating [starType]="'svg'" [showHalfStars]="true" [readOnly]="true" [rating]="lugar.promedio"></star-rating></td>
               </tr>
             </tbody>
