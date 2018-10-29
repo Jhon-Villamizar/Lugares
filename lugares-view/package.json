@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -24,7 +23,6 @@
     "angular-star-rating": "^4.0.0-beta.3",
     "core-js": "^2.5.4",
     "css-star-rating": "^1.2.4",
-    "express": "^4.16.4",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },

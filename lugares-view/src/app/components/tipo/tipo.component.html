@@ -61,7 +61,9 @@
           <div class="card z-depth-3">
             <div class="card-content">
               <div class="icon-block">
-                <img src="../../../assets/imagenes/restaurates.jpg" class="responsive-img" alt="">
+                <div class="imagenes">
+                  <img src="../../../assets/imagenes/parrilla.jpg" class="responsive-img" alt="">
+                </div>
                 <h5 class="center">Parrilla</h5>
                 <p class="light text-justify">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
                   especialidades.</p>
@@ -76,7 +78,9 @@
           <div class="card z-depth-3">
             <div class="card-content">
               <div class="icon-block">
-                <img src="../../../assets/imagenes/restaurates.jpg" class="responsive-img" alt="">
+                <div class="imagenes">
+                  <img src="../../../assets/imagenes/oriental.jpg" class="responsive-img" alt="">
+                </div>
                 <h5 class="center">Oriental</h5>
                 <p class="light text-justify">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
                   especialidades.</p>
@@ -91,7 +95,9 @@
           <div class="card z-depth-3">
             <div class="card-content">
               <div class="icon-block">
-                <img src="../../../assets/imagenes/restaurates.jpg" class="responsive-img" alt="">
+                <div class="imagenes">
+                  <img src="../../../assets/imagenes/italiana.jpg" class="responsive-img" alt="">
+                </div>
                 <h5 class="center">Italiana</h5>
                 <p class="light text-justify">Encuentra todos las opciones en restaurantes de toda la ciudad y sus respectivas
                   especialidades.</p>
@@ -102,19 +108,23 @@
       </div>
     </div>
 
-    <!--   especialidadB!   -->
+    <!--   Bares!   -->
     <div class="row row-cards" *ngIf="especialidadB">
       <div *ngFor="let lugar of servicioService.lugares.respuesta">
-        <div class="col s12 m4" *ngIf="lugar.lugar.tipo=='Bar'">
-          <a href="javascript:;">
+        <div class="col s12 m4" *ngIf="lugar.lugar.especialidad=='Bar'">
+          <a href="javascript:;" data-toggle="modal" data-target="#Modal" (click)="mostrarLugar(lugar)">
             <div class="card z-depth-3">
               <div class="card-content">
                 <div class="icon-block">
                   <div class="imagenes">
-                    <img [src]="lugar.lugar.imagen" class="responsive-img" alt="" height="125px">
+                    <img [src]="lugar.lugar.imagen" class="responsive-img" alt="">
                   </div>
                   <h5 class="center">{{lugar.lugar.nombre}}</h5>
-                  <p class="light text-justify">{{lugar.lugar.descripcion}}</p>
+                  <p class="text-center datos">{{lugar.lugar.especialidad}}</p>
+                  <p class="text-center datos">{{lugar.lugar.lugar}}</p>
+                  <p class="text-center datos">{{lugar.lugar.direccion}}</p>
+                  <p class="estrellas"><star-rating [starType]="'svg'" [showHalfStars]="true" [readOnly]="true" [rating]="lugar.promedio"></star-rating></p>
+                  <p class="text-center datos">{{lugar.contador}}<i class="material-icons i-personas">people</i></p>
                 </div>
               </div>
             </div>
@@ -123,19 +133,23 @@
       </div>
     </div>
 
-    <!--   especialidadC!   -->
+    <!--   Cafes!   -->
     <div class="row row-cards" *ngIf="especialidadC">
       <div *ngFor="let lugar of servicioService.lugares.respuesta">
         <div class="col s12 m4" *ngIf="lugar.lugar.especialidad=='Cafe'">
-          <a href="javascript:;">
+          <a href="javascript:;" data-toggle="modal" data-target="#Modal" (click)="mostrarLugar(lugar)">
             <div class="card z-depth-3">
               <div class="card-content">
                 <div class="icon-block">
                   <div class="imagenes">
-                     <img [src]="lugar.lugar.imagen" class="responsive-img" alt="" height="125px">
+                    <img [src]="lugar.lugar.imagen" class="responsive-img" alt="">
                   </div>
                   <h5 class="center">{{lugar.lugar.nombre}}</h5>
-                  <p class="light text-justify">{{lugar.lugar.descripcion}}</p>
+                  <p class="text-center datos">{{lugar.lugar.especialidad}}</p>
+                  <p class="text-center datos">{{lugar.lugar.lugar}}</p>
+                  <p class="text-center datos">{{lugar.lugar.direccion}}</p>
+                  <p class="estrellas"><star-rating [starType]="'svg'" [showHalfStars]="true" [readOnly]="true" [rating]="lugar.promedio"></star-rating></p>
+                  <p class="text-center datos">{{lugar.contador}}<i class="material-icons i-personas">people</i></p>
                 </div>
               </div>
             </div>
@@ -148,7 +162,7 @@
     <div class="row row-cards" *ngIf="parrilla">
       <div *ngFor="let lugar of servicioService.lugares.respuesta">
         <div class="col s12 m4" *ngIf="lugar.lugar.especialidad=='Parrilla'">
-          <a href="javascript:;" data-toggle="modal" data-target=".bd-example-modal-lg" (click)="mostrarLugar(lugar)">
+          <a href="javascript:;" data-toggle="modal" data-target="#Modal" (click)="mostrarLugar(lugar)">
             <div class="card z-depth-3">
               <div class="card-content">
                 <div class="icon-block">
@@ -173,7 +187,7 @@
     <div class="row row-cards" *ngIf="oriental">
       <div *ngFor="let lugar of servicioService.lugares.respuesta">
         <div class="col s12 m4" *ngIf="lugar.lugar.especialidad=='Oriental'">
-          <a href="javascript:;" data-toggle="modal" data-target=".bd-example-modal-lg" (click)="mostrarLugar(lugar)">
+          <a href="javascript:;" data-toggle="modal" data-target="#Modal" (click)="mostrarLugar(lugar)">
             <div class="card z-depth-3">
               <div class="card-content">
                 <div class="icon-block">
@@ -199,7 +213,7 @@
     <div class="row row-cards" *ngIf="italiana">
       <div *ngFor="let lugar of servicioService.lugares.respuesta">
         <div class="col s12 m4" *ngIf="lugar.lugar.especialidad=='Italiana'">
-          <a href="javascript:;" data-toggle="modal" data-target=".bd-example-modal-lg" (click)="mostrarLugar(lugar)">
+          <a href="javascript:;" data-toggle="modal" data-target="#Modal" (click)="mostrarLugar(lugar)">
             <div class="card z-depth-3">
               <div class="card-content">
                 <div class="icon-block">
@@ -222,36 +236,48 @@
       </div>
     </div>
     <!-- Modal Trigger -->
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
+<!-- Modal -->
+<!-- Modal -->
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="img-modal">
-            <img [src]="modal.lugar.imagen" class="responsive-img" alt="">
+          <div class="modal-header">
+            <div class="img-modal">
+              <img [src]="modal.lugar.imagen" class="responsive-img" alt="">
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <p class="center mb-0">{{modal.lugar.tipo}}</p>
-          <h5 class="center mb-0">{{modal.lugar.nombre}}</h5>
-          <p class="estrellas"><star-rating [starType]="'svg'" [showHalfStars]="true" [readOnly]="true" [rating]="modal.promedio"></star-rating></p>
-          <p class="text-center datos">{{modal.contador}}<i class="material-icons i-personas">people</i></p>
+          <div class="modal-body">
+            <p class="center mb-0">{{modal.lugar.tipo}}</p>
+            <h5 class="center mb-0">{{modal.lugar.nombre}}</h5>
+            <p class="estrellas"><star-rating [starType]="'svg'" [showHalfStars]="true" [readOnly]="true" [rating]="modal.promedio"></star-rating></p>
+            <p class="text-center datos">{{modal.contador}}<i class="material-icons i-personas">people</i></p>
 
-          <p class="datos"><b>Especialida:</b> {{modal.lugar.especialidad}}</p>
-          <p class="datos"><b>Direccion:</b> {{modal.lugar.direccion}}, Barrio {{modal.lugar.lugar}}, {{modal.lugar.ciudad}}</p>
-          <ul>
-            <p class="datos"><b>Horarios:</b>
-            <li class="horario"><b>Lunes: </b><span class="lunes">{{modal.lugar.horarios?.lunes}}</span></li>
-            <li class="horario"><b>Martes: </b><span class="martes">{{modal.lugar.horarios?.martes}}</span></li>
-            <li class="horario"><b>Miercoles: </b><span class="miercoles">{{modal.lugar.horarios?.miercoles}}</span></li>
-            <li class="horario"><b>Jueves: </b><span class="jueves">{{modal.lugar.horarios?.jueves}}</span></li>
-            <li class="horario"><b>Viernes: </b><span class="viernes">{{modal.lugar.horarios?.viernes}}</span></li>
-            <li class="horario"><b>Sabado: </b><span class="sabado">{{modal.lugar.horarios?.sabado}}</span></li>
-            <li class="horario"><b>Domingo: </b><span class="domingo">{{modal.lugar.horarios?.domingo}}</span></li>
-          </ul>
-          <p class="datos"><b>Contacto:</b></p>
-          <ul>
-            <li class="horario"><b>Telefono: </b><span>{{modal.lugar.telefono}}</span></li>
-            <li class="horario"><b>Página: </b><a target="_blank" [href]="modal.lugar.web">Facebook</a></li>
-            <li class="horario"><b>Correo: </b><span>{{modal.lugar.correo}}</span></li>
-          </ul>
-          <p class="datos"><b>Descripcion: </b>{{modal.lugar.descripcion}}</p>
+            <p class="datos"><b>Especialida:</b> {{modal.lugar.especialidad}}</p>
+            <p class="datos"><b>Direccion:</b> {{modal.lugar.direccion}}, Barrio {{modal.lugar.lugar}}, {{modal.lugar.ciudad}}</p>
+            <ul>
+              <p class="datos"><b>Horarios:</b>
+              <li class="horario"><b>Lunes: </b><span class="lunes">{{modal.lugar.horarios?.lunes}}</span></li>
+              <li class="horario"><b>Martes: </b><span class="martes">{{modal.lugar.horarios?.martes}}</span></li>
+              <li class="horario"><b>Miercoles: </b><span class="miercoles">{{modal.lugar.horarios?.miercoles}}</span></li>
+              <li class="horario"><b>Jueves: </b><span class="jueves">{{modal.lugar.horarios?.jueves}}</span></li>
+              <li class="horario"><b>Viernes: </b><span class="viernes">{{modal.lugar.horarios?.viernes}}</span></li>
+              <li class="horario"><b>Sabado: </b><span class="sabado">{{modal.lugar.horarios?.sabado}}</span></li>
+              <li class="horario"><b>Domingo: </b><span class="domingo">{{modal.lugar.horarios?.domingo}}</span></li>
+            </ul>
+            <p class="datos"><b>Contacto:</b></p>
+            <ul>
+              <li class="horario"><b>Telefono: </b><span>{{modal.lugar.telefono}}</span></li>
+              <li class="horario"><b>Web: </b><a target="_blank" [href]="modal.lugar.web">Principal de {{modal.lugar.nombre}}</a></li>
+              <li class="horario"><b>Correo: </b><span>{{modal.lugar.correo}}</span></li>
+            </ul>
+            <p class="datos"><b>Descripcion: </b>{{modal.lugar.descripcion}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>

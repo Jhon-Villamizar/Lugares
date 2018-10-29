@@ -87,7 +87,7 @@ export class TipoComponent implements OnInit {
     if (this.tipos == true) {
       this.tipos = false;
       this.especialidadB=true;
-      this.title = 'Bares por especialidad';
+      this.title = 'Bares';
       this.inicio = true;
     }
   }
@@ -95,7 +95,7 @@ export class TipoComponent implements OnInit {
     if (this.tipos == true) {
       this.tipos = false
       this.especialidadC=true;
-      this.title = 'Cafés por especialidad';
+      this.title = 'Cafés';
       this.inicio = true;
     }
   }
@@ -127,5 +127,6 @@ export class TipoComponent implements OnInit {
       this.retroceder = true;
     }
   }
+  
 
 }
